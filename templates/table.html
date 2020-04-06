@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 style="text-align:center">Оформление каюты</h2>
+    <table class="stateroom-table">
+        <tr>
+          <th>Цвет стен</th>
+          <th>Эмблема</th>
+        </tr>
+        <tr>
+          <td style="background-color: {% if sex == 'male' and age < 21 %}lightblue{% elif sex == 'male' and age >= 21 %}blue{% elif sex == 'female' and age < 21 %}plum{% else %}fuchsia{% endif %}"></td>
+          <td><img src={% if age < 21 %}"/static/img/young.jpg"{% else %}"/static/img/old.jpg"{% endif %} alt="Not found" height="400" width="330"></td>
+        </tr>
+    </table>
+{% endblock %}
